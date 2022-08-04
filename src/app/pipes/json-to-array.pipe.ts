@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-interface IObjectStringValues{
+export interface IObjectStringValues{
   [index: string]: string;
 }
 
@@ -9,8 +9,8 @@ interface IObjectStringValues{
 })
 export class JsonToArrayPipe implements PipeTransform {
 
-  transform( object: IObjectStringValues): Array<string> {
-      return   Object.values(object) 
+  transform( object: IObjectStringValues | undefined | string[]): Array<string> {
+      return  object ? Object.values(object) : ["No data to display"]
   }
 
 }

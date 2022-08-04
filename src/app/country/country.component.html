@@ -16,7 +16,7 @@
             <tr *ngFor="let country of (countries | searchByColumn:searchBy.value| pagination: currentPage:itemsByPage ); let i = index " 
             [routerLink]="['country', country.name.official]" routerLinkActive="router-link-activate">
               <td >{{country.name.official}}</td>
-              <td>{{country.capital | stringlify}}</td>
+              <td>{{country.capital | jsonToArray}}</td>
               <td>{{country.region}}</td>
               <td>{{country.languages | jsonToArray |stringlify}}</td>
               <td>{{country.population}}</td>
