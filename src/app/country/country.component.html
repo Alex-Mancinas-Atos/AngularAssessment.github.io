@@ -1,0 +1,36 @@
+
+<main *ngIf="(countries | async) as countries">
+  <input type="text" [formControl]="searchBy" placeholder="search by name">
+  <button type="button"  (click)="toggle()">Toggle</button>
+  <section>
+      <table>
+          <thead>
+              <th>Name</th>
+              <th>Capital</th>
+              <th>Region</th>
+              <th>Language</th>
+              <th>Population</th>
+              <th>Flag</th>
+          </thead>
+          <tbody >
+            <tr *ngFor="let country of (countries | searchByColumn:searchBy.value| pagination: currentPage:itemsByPage ); let i = index " 
+            [routerLink]="['country', country.name.official]" routerLinkActive="router-link-activate">
+              <td >{{country.name.official}}</td>
+              <td>{{country.capital | stringlify}}</td>
+              <td>{{country.region}}</td>
+              <td>{{country.languages | jsonToArray |stringlify}}</td>
+              <td>{{country.population}}</td>
+              <td>{{country.flag}}</td>
+            </tr>
+          </tbody>
+      </table>
+  </section>
+   
+    <div>
+      <p></p>
+      <button (click)="changeCurrenPage(currentPage - 1)" [disabled]="(currentPage === 0)">Previous</button>
+
+      <button (click)="changeCurrenPage(currentPage + 1)"
+        [disabled]="(currentPage >= (countries.length / itemsByPage) - 1)">Next</button>
+    </div>
+  </main>

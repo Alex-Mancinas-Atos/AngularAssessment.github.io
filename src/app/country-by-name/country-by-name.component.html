@@ -1,0 +1,13 @@
+<!-- <article *ngIf="countryDetails | async as country" class="card">
+    <h1>{{country.title}}</h1>
+    <h3>Description: {{country.description}}</h3>
+    <h5>Resume</h5>
+    <p>{{country.extract}}</p>
+</article> -->
+<div class="card"*ngIf="countryDetails | async as country">
+    <div class="card-body">
+        <h5 class="card-title">{{country.title}}</h5>
+        <p class="card-text">{{country.extract}}</p>
+        <button type="button" [routerLink]="['']" routerLinkActive="router-link-activate">Back to more countries</button>
+    </div>
+</div>

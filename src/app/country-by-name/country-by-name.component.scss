@@ -1,0 +1,47 @@
+.card{
+    box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: auto;
+    padding-bottom: 3rem;
+	width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    .card-title{
+        padding-top: 2rem;
+        
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        color: #344055;
+        margin: 0;
+    }
+    .card-text{
+        text-align: center;
+        padding: 2rem 7rem;
+    }
+    button{
+        display: block;
+        margin: auto;
+        margin-top: 1rem;
+        border: none;
+        background-color: rgb(28, 28, 158);
+        color: white;
+        height: auto;
+        width: auto;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 2rem;
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:active{
+            background-color: gray;
+        }
+    }
+}
+
